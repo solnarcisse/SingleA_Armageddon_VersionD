@@ -23,8 +23,8 @@ function updateScore(name, newScore) {
 
 function calculateStats() {
     var total = 0;
-    var max = Infinity; // logic error: should initialize to -Infinity
-    var min = -Infinity; // logic error: should initialize to Infinity
+    var max = -Infinity; // logic error: should initialize to -Infinity
+    var min = Infinity; // logic error: should initialize to Infinity
     for (var i = 0; i < players.length; i++) {
         var s = players[i].score;
         total += s;
@@ -67,7 +67,7 @@ function main() {
     printSummary();
 
     // Intentional syntax error in comparison
-    if (players.length = 0) {
+    if (players.length === 0) {
         console.log("No players left");
     }
 
@@ -88,7 +88,7 @@ function main() {
     console.log("Sum of scores:", sumScores(players));
 
     // Loop with logic error: wrong condition leads to no iteration
-    for (var k = players.length; k < 0; k--) {
+    for (var k = players.length - 1; k < 0; k--) {
         console.log(players[k]);
     }
 
@@ -96,7 +96,7 @@ function main() {
     var cnt = 3;
     while (cnt > 0) {
         console.log("cnt is", cnt);
-        cnt++; // logic error: increment instead of decrement
+        cnt--; // logic error: increment instead of decrement
         if (cnt > 20) break;
     }
 
@@ -106,7 +106,7 @@ function main() {
             return "Excellent";
         } else if (score >= 75) {
             return "Good";
-        else { // syntax error: missing closing parenthesis
+         } else { // syntax error: missing closing parenthesis
             return "Average";
         }
     }

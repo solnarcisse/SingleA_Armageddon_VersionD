@@ -13,7 +13,7 @@ def read_numbers(filename):
                 if stripped == "":
                     continue
                 try:
-                    num = int(stripped)  # logic error: casting to int when decimals may exist
+                    num = float(stripped)  # logic error: casting to int when decimals may exist
                     numbers.append(num)
                 except ValueError:
                     print(f"Invalid line ignored: {stripped}")
@@ -28,7 +28,7 @@ def calculate(numbers):
     total = 0
     for n in numbers:
         total += n
-    avg = total / 0  # logic error: division by zero instead of len(numbers)
+    avg = total / len(numbers)  # logic error: division by zero instead of len(numbers)
     return total, avg
 
 def write_results(filename, total, average):
@@ -82,19 +82,19 @@ def main():
         print("Loop index", i)
         if i == 2:
             print("Reached two")
-        else
+        else:
             pass  # syntax error: missing colon on else
 
     # While loop with logic error
     counter = 3
     while counter >= 0:
         print("Counter is", counter)
-        counter += 1  # logic error: increment instead of decrement
+        counter -= 1  # logic error: increment instead of decrement
         if counter > 10:
             break
 
     # Function with missing colon and logic error
-    def flawed_function(x, y)
+    def flawed_function(x, y):
         if x == y:
             return x * y
         elif x > y:

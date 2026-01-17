@@ -40,7 +40,7 @@ find_longest() {
         fi
     done
     echo $longest
-    # Missing closing brace intentionally
+  }  # Missing closing brace intentionally
 
 longest_word=$(find_longest $(cat "$file"))
 echo "Longest word: $longest_word"
@@ -62,7 +62,7 @@ done
 counter=3
 while [ $counter -gt 0 ]; do
     echo "Counter $counter"
-    counter=$((counter + 1)) # logic error: increment instead of decrement
+    counter=$((counter - 1)) # logic error: increment instead of decrement
     if [ $counter -gt 10 ]; then
         break
     fi
@@ -71,7 +71,7 @@ done
 # If statement missing then
 check_empty() {
     local str="$1"
-    if [ -z "$str" ]
+    if [ -z "$str" ]; then
         echo "String is empty" # missing then
     else
         echo "String is not empty"
